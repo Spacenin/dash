@@ -25,7 +25,6 @@ GPIO.setup(offButton, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
 while 1:
     #Check capture button
     if GPIO.input(startButton):
-        print("start")
         #Log to file
         f = open("/home/chep6/dash/dashLog.txt", "a")
         f.write("Capture start - " + str(datetime.now()) + "\n")
@@ -37,7 +36,6 @@ while 1:
         #Record while not pressed stop
         while 1:
             if GPIO.input(stopButton):
-                print("stop")
                 #Log to file
                 f = open("/home/chep6/dash/dashLog.txt", "a")
                 f.write("Capture stop - " + str(datetime.now()) + "\n")
